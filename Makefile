@@ -3,15 +3,15 @@ include .env
 
 build:
 	docker build -t ${DOCKER_REPOSITORY}:irishibernate-version-${TAG} -f hibernate.Dockerfile .
-	docker build --build-arg SOURCE_BRANCH=${TAG} -t ${DOCKER_REPOSITORY}:irisjboss-version-${TAG} .
+	docker build --build-arg SOURCE_BRANCH=${TAG} -t ${DOCKER_REPOSITORY}:version-${TAG} .
 
 clean:
 	-docker rmi ${DOCKER_REPOSITORY}:irishibernate-version-${TAG}
-	-docker rmi ${DOCKER_REPOSITORY}:irisjboss-version-${TAG}
+	-docker rmi ${DOCKER_REPOSITORY}:version-${TAG}
 
 push:
 	-docker push ${DOCKER_REPOSITORY}:irishibernate-version-${TAG}
-	-docker push ${DOCKER_REPOSITORY}:irisjboss-version-${TAG}
+	-docker push ${DOCKER_REPOSITORY}:version-${TAG}
 
 run:
 	docker run --rm -it  \
@@ -23,4 +23,4 @@ run:
     -e IRIS_MASTER_PORT=51773 \
     -e IRIS_MASTER_NAMESPACE=APP \
     --name jboss \
-    ${DOCKER_REPOSITORY}:irisjboss-version-${TAG}
+    ${DOCKER_REPOSITORY}:version-${TAG}
