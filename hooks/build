@@ -1,9 +1,16 @@
 #!/bin/bash
 
-echo "### HOOK - build started..."
-
-echo "SOURCE_BRANCH: $SOURCE_BRANCH"
+echo "### HOOK - build started:"
+echo "   SOURCE_BRANCH  : $SOURCE_BRANCH"
+echo "   SOURCE_COMMIT  : $SOURCE_COMMIT"
+echo "   COMMIT_MSG     : $COMMIT_MSG"
+echo "   DOCKER_REPO    : $DOCKER_REPO"
+echo "   DOCKERFILE_PATH: $DOCKERFILE_PATH"
+echo "   DOCKER_TAG     : $DOCKER_TAG"
+echo "   DOCKER_TAG     : $IMAGE_NAME"
 
 VERSION=$(echo $SOURCE_BRANCH | sed 's/^v//')
+
+echo "   VERSION        : $VERSION"
 
 docker build --build-arg VERSION=$VERSION -t $IMAGE_NAME .
