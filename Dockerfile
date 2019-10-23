@@ -1,4 +1,4 @@
-ARG SOURCE_BRANCH
+ARG VERSION
 FROM intersystemsdc/irisdemo-base-jboss:irishibernate-version-${VERSION}
 
 # Here is our real image. This is the universe we are going to stay on.
