@@ -21,7 +21,7 @@ FROM jboss/base-jdk:8
 
 LABEL maintainer="Amir Samary <amir.samary@intersystems.com>"
 
-ADD --chown=jboss:root ./buildfiles/iris-hibernate/ /tmp/hibernate/
+ADD --chown=jboss:root ./iris-hibernate-project/ /tmp/hibernate/
 COPY --from=0 --chown=jboss:root  /usr/irissys/dev/java/lib/JDK18/*.jar /tmp/irislib/
 COPY --from=0 --chown=jboss:root  /usr/irissys/dev/java/lib/JDK18/*.jar /tmp/hibernate/lib/
 

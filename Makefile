@@ -2,7 +2,7 @@
 include .env
 
 build:
-	docker build -t ${DOCKER_REPOSITORY}:irishibernate-version-${TAG} -f hibernate.Dockerfile .
+	docker build -t ${DOCKER_REPOSITORY}:irishibernate-version-${TAG} -f ./hibernate/Dockerfile ./hibernate
 	docker build --build-arg SOURCE_BRANCH=${TAG} -t ${DOCKER_REPOSITORY}:version-${TAG} .
 
 clean:
