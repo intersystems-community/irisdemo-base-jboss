@@ -1,5 +1,5 @@
-ARG VERSION
-FROM intersystemsdc/irisdemo-base-jboss:irishibernate-version-${VERSION}
+ARG DOCKER_TAG
+FROM intersystemsdc/irisdemo-base-jboss:irishibernate-${DOCKER_TAG}
 
 # Here is our real image. This is the universe we are going to stay on.
 # https://hub.docker.com/r/jboss/wildfly/

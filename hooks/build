@@ -9,8 +9,4 @@ echo "   DOCKERFILE_PATH: $DOCKERFILE_PATH"
 echo "   DOCKER_TAG     : $DOCKER_TAG"
 echo "   DOCKER_TAG     : $IMAGE_NAME"
 
-VERSION=$(echo $SOURCE_BRANCH | sed 's/^v//')
-
-echo "   VERSION        : $VERSION"
-
-docker build --build-arg VERSION=$VERSION -t $IMAGE_NAME .
+docker build --build-arg DOCKER_TAG=$DOCKER_TAG -t $IMAGE_NAME .
