@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "### HOOK - build started:"
+echo
+echo "### HOOK - build environment:"
 echo "   SOURCE_BRANCH  : $SOURCE_BRANCH"
 echo "   SOURCE_COMMIT  : $SOURCE_COMMIT"
 echo "   COMMIT_MSG     : $COMMIT_MSG"
@@ -9,7 +10,11 @@ echo "   DOCKERFILE_PATH: $DOCKERFILE_PATH"
 echo "   DOCKER_TAG     : $DOCKER_TAG"
 echo "   DOCKER_TAG     : $IMAGE_NAME"
 
-
+echo
+echo "### HOOK - building irishibernate..."
 docker build -t ${DOCKER_REPO}:irishibernate -f ./hibernate/Dockerfile ./hibernate
 
-docker build --build-arg DOCKER_TAG=$DOCKER_TAG -t $IMAGE_NAME .
+echo
+echo "### HOOK - building $IMAGE_NAME..."
+#docker build --build-arg DOCKER_TAG=$DOCKER_TAG -t $IMAGE_NAME .
+docker build -t $IMAGE_NAME .

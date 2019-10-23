@@ -1,4 +1,3 @@
-ARG DOCKER_TAG
 FROM intersystemsdc/irisdemo-base-jboss:irishibernate
 
 # Here is our real image. This is the universe we are going to stay on.
