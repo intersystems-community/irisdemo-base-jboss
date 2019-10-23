@@ -1,7 +1,7 @@
 ARG SOURCE_BRANCH
 FROM intersystemsdc/irisdemo-base-jboss:irishibernate-version-${SOURCE_BRANCH}
 
-# Here is our real image. This is the universe we are going to stay on. 
+# Here is our real image. This is the universe we are going to stay on.
 # https://hub.docker.com/r/jboss/wildfly/
 FROM jboss/wildfly:15.0.0.Final
 LABEL maintainer="Amir Samary <amir.samary@intersystems.com>"
