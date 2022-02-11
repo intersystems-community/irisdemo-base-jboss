@@ -1,4 +1,4 @@
-FROM intersystemsdc/irisdemo-base-irisint-community:iris-community.2019.3.0.309.0
+FROM intersystemsdc/irisdemo-base-irisint-community:iris-community.2021.2.0.651.0
 
 # This dockerfile is used to build the jar for InterSystems 
 # IRIS Hibernate dialect and nothing else. It will be referenced by the 
@@ -22,8 +22,8 @@ FROM jboss/base-jdk:8
 LABEL maintainer="Amir Samary <amir.samary@intersystems.com>"
 
 ADD --chown=jboss:root ./iris-hibernate-project/ /tmp/hibernate/
-COPY --from=0 --chown=jboss:root  /usr/irissys/dev/java/lib/JDK18/*.jar /tmp/irislib/
-COPY --from=0 --chown=jboss:root  /usr/irissys/dev/java/lib/JDK18/*.jar /tmp/hibernate/lib/
+COPY --from=0 --chown=jboss:root  /usr/irissys/dev/java/lib/1.8/*.jar /tmp/irislib/
+COPY --from=0 --chown=jboss:root  /usr/irissys/dev/java/lib/1.8/*.jar /tmp/hibernate/lib/
 
 WORKDIR /tmp/hibernate/src
 

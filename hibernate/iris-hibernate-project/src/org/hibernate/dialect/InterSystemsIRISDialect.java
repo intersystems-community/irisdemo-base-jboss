@@ -10,8 +10,7 @@
  *
  * intended for  Hibernate 5.2+  and jdk 1.8
  *
- *  Hibernate works with intersystems-jdbc-3.0.0.jar, located in the dev\java\lib\JDK18 sub-directory
- *  of the InterSystems IRIS installation directory.
+ *  Hibernate works with intersystems-jdbc-3.3.0.jar, located in the /usr/irissys/dev/java/lib/1.8/ sub-directory
  * 	Hibernate properties example
  * 		hibernate.dialect org.hibernate.dialect.ISCDialect
  *		hibernate.connection.driver_class com.intersystems.jdbc.IRISDriver
