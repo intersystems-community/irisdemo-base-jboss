@@ -20,7 +20,7 @@ run:
     -e IRIS_MASTER_USERNAME=SuperUser \
     -e IRIS_MASTER_PASSWORD=sys \
     -e IRIS_MASTER_HOST=localhost \
-    -e IRIS_MASTER_PORT=51773 \
+    -e IRIS_MASTER_PORT=1972 \
     -e IRIS_MASTER_NAMESPACE=APP \
     --name jboss \
     ${DOCKER_REPOSITORY}:version-${TAG}
